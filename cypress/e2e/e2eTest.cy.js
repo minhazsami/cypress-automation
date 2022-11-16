@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 import Home from "./pageObjects/HomePage.cy"
+import productsPage from "./pageObjects/productPage.cy"
 
 
 
@@ -16,6 +17,7 @@ describe('My First Test', () => {
     it('Verify the HomePage', () => {
 
       const homePage= new Home();
+
       cy.viewport(1000, 560)
       cy.visit(data.url)
       homePage.getEditName().type(data.name)
@@ -27,6 +29,14 @@ describe('My First Test', () => {
       homePage.getGender().select(data.gender)
       homePage.getEmploymentStatus1().click()
       homePage.getEmploymentStatus2().click()
+
+    })
+
+    it('Verify the ProductPage', () => {
+
+      const productPage=new productsPage();
+
+      
 
     })
   })
