@@ -29,12 +29,18 @@ describe('My First Test', () => {
       homePage.getGender().select(data.gender)
       homePage.getEmploymentStatus1().click()
       homePage.getEmploymentStatus2().click()
+      homePage.getShop().click()
 
     })
 
     it('Verify the ProductPage', () => {
 
       const productPage=new productsPage();
+
+      data.productName.forEach(element => {
+        
+        cy.SelectProducts(element).click()
+      });
 
       
 

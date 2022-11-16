@@ -41,6 +41,11 @@ class Home
         return cy.get('#inlineRadio2')
     }
 
+    getShop()
+    {
+        return cy.get(':nth-child(2) > .nav-link')
+    }
+
     getNameDisplayWarning()
     {
         return cy.get('.alert.alert-danger')
