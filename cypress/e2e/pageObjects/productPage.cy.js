@@ -1,10 +1,10 @@
-class productPage
+class productsPage
 {
     getCheckout()
     {
-        
+
     }
 
 }
 
-export default productPage;
+export default productsPage;
