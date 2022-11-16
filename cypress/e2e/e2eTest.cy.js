@@ -37,10 +37,13 @@ describe('My First Test', () => {
 
       const productPage=new productsPage();
 
-      //data.productName.forEach(function(element){
+      cy.wait(8000)
 
-        //cy.SelectProducts(element).click()});
+      data.productName.forEach(function(element){
 
+        cy.SelectProducts(element).click()
+
+      });
       
 
     })
