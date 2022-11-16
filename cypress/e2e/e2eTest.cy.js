@@ -37,13 +37,24 @@ describe('My First Test', () => {
 
       const productPage=new productsPage();
 
-      cy.wait(8000)
+      cy.wait(1000)
 
       data.productName.forEach(function(element){
 
-        cy.SelectProducts(element).click()
+        cy.SelectProducts(element)
 
       });
+
+      productPage.getCheckout().click()
+      productPage.getCheckoutCTA().click()
+      productPage.getText().type('Bangladesh')
+      //Cypress.config("defaultCommandTimeout", 8000)
+      cy.wait(8000)
+      productPage.getTextSuggesion().click()
+      productPage.getCheckbox().click({force: true})
+      productPage.getPurchaseCTA().click()
+      cy.wait(3000)
+      productPage.getSuccessMesg().should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).')
       
 
     })
