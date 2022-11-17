@@ -54,8 +54,8 @@ describe('My First Test', () => {
       productPage.getCheckbox().click({force: true})
       productPage.getPurchaseCTA().click()
       cy.wait(3000)
-      productPage.getSuccessMesg().should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).')
-      
+      //productPage.getSuccessMesg().should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).')
+      productPage.getSuccessMesg()
 
     })
   })

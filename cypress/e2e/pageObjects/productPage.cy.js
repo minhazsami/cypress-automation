@@ -33,7 +33,11 @@ class productsPage
 
     getSuccessMesg()
     {
-        return cy.get('.alert')
+        return cy.get('.alert').then(function(element)
+        {
+            const successAlert=element.text()
+            expect(successAlert.includes('Success')).to.be.true
+        })
     }
 
 
