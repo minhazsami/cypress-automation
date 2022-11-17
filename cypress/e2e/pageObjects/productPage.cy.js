@@ -6,6 +6,11 @@ class productsPage
         return cy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link')
     }
 
+    getItem()
+    {
+        return cy.get('tr td:nth-child(4) strong')
+    }
+
     getCheckoutCTA()
     {
         return cy.get('.btn.btn-success')

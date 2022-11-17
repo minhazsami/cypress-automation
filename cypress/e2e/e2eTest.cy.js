@@ -46,6 +46,20 @@ describe('My First Test', () => {
       });
 
       productPage.getCheckout().click()
+      // calculate total number of the products price start
+      var sum=0
+      productPage.getItem().each(($el, index, list)=>{
+        const item=$el.text()
+        var resutl=item.split(' ')
+        resutl=resutl[1].trim()
+        sum=Number(sum)+Number(resutl)
+        
+      }).then(function(){
+        cy.log(sum)
+      })
+      
+      // Calculation End
+
       productPage.getCheckoutCTA().click()
       productPage.getText().type('Bangladesh')
       //Cypress.config("defaultCommandTimeout", 8000)
