@@ -18,7 +18,7 @@ describe('My First Test', () => {
 
       const homePage= new Home();
 
-      cy.viewport(1000, 560)
+      cy.viewport(1000, 660)
       cy.visit(data.url)
       homePage.getEditName().type(data.name)
       //Assersion
@@ -57,6 +57,16 @@ describe('My First Test', () => {
       }).then(function(){
         cy.log(sum)
       })
+
+      //validate total amount with sum (Start)
+      productPage.getTotalAmount().then(function(element)
+      {
+        const totalAmount = element.text()
+        var resut2=totalAmount.split(' ')
+        resut2=resut2[1].trim()
+        expect(Number(resut2)).to.equal(sum)
+      })
+      //validate total amount with sum (end)
       
       // Calculation End
 
