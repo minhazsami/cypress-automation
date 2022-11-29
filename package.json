@@ -2,5 +2,10 @@
   "devDependencies": {
     "cypress": "^10.8.0",
     "cypress-iframe": "^1.0.1"
+  },
+
+  "scripts": {
+    "test" : "npx cypress run",
+    "e2e" : "npx cypress run -- --spec \"cypress/e2e/e2eTest.cy.js\""
   }
 }
